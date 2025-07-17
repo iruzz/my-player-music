@@ -1,0 +1,102 @@
+.footer-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: #2d2d2d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.6);
+  z-index: 9999;
+  color: white;
+}
+
+/* Kiri: Info Lagu */
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.track-thumbnail {
+  width: 60px;
+  height: 60px;
+  background-color: #555;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.track-details {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.track-title {
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.track-artist {
+  font-size: 14px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+/* Tengah: Ikon */
+.player-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+/* Kanan: Progress bar */
+.track-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+
+.progress-bar {
+  background: #555;
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-fill {
+  background: #ff00aa;
+  height: 100%;
+  transition: width 0.1s linear;
+}
+
+.progress-bar:hover {
+  background: #666;
+}

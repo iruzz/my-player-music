@@ -1,0 +1,58 @@
+.upload-song {
+  background-color: #2d2d2d;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 25px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.upload-song h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #ffd500;
+  border-left: 4px solid #ffd500;
+  padding-left: 10px;
+}
+
+.upload-song form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upload-song input[type="text"],
+.upload-song input[type="file"],
+.upload-song select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #444;
+  color: #fff;
+  font-size: 15px;
+}
+
+.upload-song select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+}
+
+.upload-song button {
+  padding: 12px 22px;
+  background-color: #ffd500;
+  color: #222;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.upload-song button:hover {
+  background-color: #e5c200;
+}

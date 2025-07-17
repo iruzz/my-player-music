@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #2C2C2C;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-top: 70px;         /* ✅ beri ruang untuk navbar fixed */
+  padding-bottom: 120px;     /* ✅ beri ruang untuk footer player */
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: inherit;
+  font: inherit;
+}
+
+/* ✅ FIXED NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 9999;
+  background-color: #3D3D3D;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.6),
+    inset 6px 6px 12px rgba(255, 255, 255, 0.05),
+    inset -6px -6px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.navbar .aa::before {
+  content: attr(data-text);
+  background-color: #3D3D3D;
+  color: white;
+  position: absolute;
+  transform: translateY(40px) translateX(-25px);
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  transition: 0.5s cubic-bezier(0.78,-0.08, 0.02, 1.43);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.navbar .aa:hover::before {
+  transform: translateY(45px) translateX(-15px);
+  box-shadow: 0px 0px 10px black;
+  opacity: 1;
+}
+
+/* ICON */
+.svg {
+  filter: brightness(0) invert(1) contrast(2);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.svg:hover {
+  filter: invert(1) drop-shadow(0 0 8px #ffd500aa);
+  transform: scale(1.1);
+}
+
+/* ✅ SEARCH BAR */
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff1a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow:
+    inset 4px 4px 10px rgba(0, 0, 0, 0.6),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.05),
+    0 2px 5px rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+}
+
+.searchkolom input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  width: 150px;
+}
+
+.searchkolom input::placeholder {
+  color: #ddd;
+  font-style: italic;
+}
+
+/* ✅ HAMBURGER ICON */
+.ham {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: 80px;
+  right: 30px;
+  background-color: #3D3D3D;
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  color: #ffd500;
+}
+
+.dd {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* MAIN CONTENT */
+main {
+  padding: 20px 40px;
+  color: white;
+}
+
+/* FOOTER PLAYER */
+.footer-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: #2d2d2d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.6);
+  z-index: 9999;
+  color: white;
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.track-thumbnail {
+  width: 60px;
+  height: 60px;
+  background-color: #555;
+  border-radius: 10px;
+}
+
+.track-details .track-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.track-details .track-artist {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.player-controls {
+  display: flex;
+  gap: 20px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+.track-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 5px;
+  background: #555;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #ffd500;
+  transition: width 0.3s ease;
+}
+
+/* FOOTER INFO */
+.footer-info {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+  background: transparent;
+  margin-bottom: 30px;
+}
+
+/* ✅ RESPONSIVE LAYOUT UNTUK MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .searchbar {
+    width: 40%;
+    justify-content: center;
+    /* margin-top: 10px; */
+  }
+
+  .ham {
+    align-self: flex-end;
+  }
+
+  .dropdown-menu {
+    top: 100%;
+    right: 10px;
+    width: 180px;
+  }
+
+  main {
+    padding: 100px 20px 40px;
+  }
+}

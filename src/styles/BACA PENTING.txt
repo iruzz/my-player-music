@@ -1,0 +1,1 @@
+disini semua aku taro si css nya, tapisi global.csss nya kepaai dimana mana walu dikit tapi agak ngaruh ke main.jsx, hati hati aja dan sorry :>

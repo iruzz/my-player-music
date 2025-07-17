@@ -1,0 +1,134 @@
+.card-player-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.card-player {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.more-menu-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+}
+
+.more-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.more-menu-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background: #333;
+  border-radius: 8px;
+  padding: 6px 0;
+  z-index: 10;
+  min-width: 150px;
+}
+
+.more-menu-dropdown p {
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.more-menu-dropdown p:hover {
+  background-color: #444;
+}
+
+.more-menu-wrapper:hover .more-menu-dropdown {
+  display: block;
+}
+
+.album-wrapper {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1/1;
+  margin: 60px auto 20px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.album-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.track-info h2 {
+  font-size: 22px;
+  margin: 10px 0 4px;
+}
+
+.track-info p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 20px 0;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.controls img {
+  width: 28px;
+  height: 28px;
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 500px;
+  height: 6px;
+  background-color: #555;
+  border-radius: 3px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 40%;
+  background-color: #ffd500;
+  border-radius: 3px;
+}

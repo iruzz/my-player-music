@@ -1,0 +1,9 @@
+/*footer info*/
+.footer-info {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+  background: transparent;
+  margin-bottom: 30px; /* jarak dari player bar */
+}

@@ -1,0 +1,145 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3D3D3D;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.aa {
+  margin-right: 10px;
+}
+
+.svg {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+/* ✅ SEARCH BAR FIX */
+.searchbar {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #ffffff1a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow:
+    inset 4px 4px 10px rgba(0, 0, 0, 0.6),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.05),
+    0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.searchbar input {
+  background: transparent;
+  border: none;
+  color: white;
+  flex: 1;
+  outline: none;
+  font-size: 14px;
+}
+
+.searchbar img {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* 🔽 Dropdown hasil pencarian */
+.dropdown-search {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.result-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.result-item:hover {
+  background-color: #333;
+}
+
+.result-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* ✅ HAMBURGER ICON */
+.ham {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.ham .svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  position: absolute;
+  top: 65px;
+  right: 20px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  color: white;
+  background: none;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.dd {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  filter: invert(1);
+}
+
+.logout-btn {
+  cursor: pointer;
+}

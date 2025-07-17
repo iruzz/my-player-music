@@ -1,0 +1,187 @@
+.music-section {
+  margin: 16px 0; /* kecilin jaraknya */
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.section-header a {
+  font-size: 15px;
+  color: #ffd500;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.section-header a:hover {
+  text-decoration: underline;
+}
+
+.carousel-wrapper {
+  position: relative;
+  padding: 0 60px;
+}
+
+.music-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 15px;
+}
+.music-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(30,30,30,0.85);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.scroll-btn.left {
+  left: 20px;
+}
+.scroll-btn.right {
+  right: 20px;
+}
+.scroll-btn:hover {
+  background-color: #ffd500;
+  color: #222;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.music-card {
+  flex: 0 0 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.album-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  background-color: #444;
+  transition: transform 0.3s ease;
+}
+.album-container:hover {
+  transform: scale(1.05);
+}
+
+.album-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.album-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.album-container:hover .album-play-btn {
+  opacity: 1;
+}
+
+.music-card p {
+  margin-top: 10px;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  max-width: 160px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Responsif untuk tablet (max 768px) */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 0 30px;
+  }
+
+  .music-card {
+    flex: 0 0 130px;
+  }
+
+  .album-container {
+    width: 130px;
+    height: 130px;
+  }
+
+  .music-card p {
+    font-size: 0.95rem;
+    max-width: 130px;
+  }
+
+  .scroll-btn {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+/* Responsif untuk HP (max 480px) */
+@media (max-width: 480px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .carousel-wrapper {
+    padding: 0 15px;
+  }
+
+  .music-card {
+    flex: 0 0 110px;
+  }
+
+  .album-container {
+    width: 110px;
+    height: 110px;
+  }
+
+  .music-card p {
+    font-size: 0.85rem;
+    max-width: 110px;
+  }
+
+  .scroll-btn {
+    font-size: 18px;
+    padding: 8px;
+  }
+}

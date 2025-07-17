@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "Ambivalent",
+    "artist": "EVE",
+    "img": "https://t2.genius.com/unsafe/258x258/https%3A%2F%2Fimages.genius.com%2Fb3080eb4062fb32b405000edc377fed2.1000x1000x1.png",
+    "src": "/music/Ambivalent.mp3"
+  },
+  {
+    "id": 2,
+    "title": "Slash Inferno",
+    "artist": "Teminite x Boom Kitty x Waterflame",
+    "img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/80/b6/7480b6f1-98eb-a9ce-ad3f-fcd785bfb1a4/artwork.jpg/208x208bb.webp",
+    "src": "/music/Slash Inferno.mp3"
+  },
+  {
+    "id": 3,
+    "title": "Player",
+    "artist": "Yoasobi",
+    "img": "https://m.media-amazon.com/images/I/41r9LKlabJL._SL160_.jpg",
+    "src": "/music/PLAYERS.mp3"
+  }
+  
+]
+

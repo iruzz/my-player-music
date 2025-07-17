@@ -1,0 +1,135 @@
+.admin-dashboard {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.admin-dashboard h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #ffd500;
+  text-align: center;
+}
+
+.admin-dashboard h3 {
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-left: 4px solid #ffd500;
+  padding-left: 12px;
+}
+
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.request-item {
+  background-color: #2d2d2d;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.request-item h4 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #ffd500;
+}
+
+.request-item p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.request-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.request-actions button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.request-actions .accept {
+  background-color: #ffd500;
+  color: #222;
+}
+
+.request-actions .accept:hover {
+  background-color: #e5c200;
+}
+
+.request-actions .delete {
+  background-color: #ff4b4b;
+  color: #fff;
+}
+
+.request-actions .delete:hover {
+  background-color: #d93c3c;
+}
+
+.upload-form {
+  background-color: #2d2d2d;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 25px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.upload-form div {
+  margin-bottom: 18px;
+}
+
+.upload-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.upload-form input[type="text"],
+.upload-form input[type="file"],
+.upload-form select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #444;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* Custom dropdown style */
+.upload-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+}
+
+.upload-form button {
+  margin-top: 10px;
+  padding: 12px 22px;
+  background-color: #ffd500;
+  color: #222;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.upload-form button:hover {
+  background-color: #e5c200;
+}
