@@ -19,7 +19,7 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isShuffled, setIsShuffled] = useState(false);
-  const [repeatMode, setRepeatMode] = useState('none');
+  const [repeatMode, setRepeatMode] = useState('none'); // 'none', 'one', 'all'
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -27,15 +27,21 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
 
     audio.src = currentSong.audio || currentSong.src;
     audio.load();
+
+    const playAudio = async () => {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.warn('Auto play blocked:', err);
+        setIsPlaying(false);
+      }
+    };
+
+    playAudio();
+
     setCurrentTime(0);
     setDuration(0);
-
-    if (isPlaying) {
-      audio.play().catch(err => {
-        console.warn('Playback blocked by browser:', err);
-        setIsPlaying(false);
-      });
-    }
   }, [currentSong]);
 
   useEffect(() => {
@@ -54,8 +60,15 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
       if (repeatMode === 'one') {
         audio.currentTime = 0;
         audio.play();
-      } else {
+      } else if (repeatMode === 'all' || true) {
         handleNext();
+      } else {
+        const currentIndex = songs.findIndex(song => song.id === currentSong?.id);
+        if (currentIndex + 1 < songs.length) {
+          setCurrentSong(songs[currentIndex + 1]);
+        } else {
+          setIsPlaying(false); // end of list
+        }
       }
     };
 
@@ -68,7 +81,7 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
       audio.removeEventListener('loadedmetadata', setMeta);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [isDragging, repeatMode]);
+  }, [isDragging, repeatMode, currentSong, songs]);
 
   const formatTime = (time) => {
     if (isNaN(time)) return '0:00';
@@ -119,14 +132,6 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
     }
 
     setCurrentSong(songs[nextIndex]);
-
-    // Auto play next song
-    setTimeout(() => {
-      const audio = audioRef.current;
-      if (audio) {
-        audio.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
-      }
-    }, 100);
   };
 
   const handlePrevious = () => {
@@ -144,14 +149,6 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
     }
 
     setCurrentSong(songs[prevIndex]);
-
-    // Auto play previous song
-    setTimeout(() => {
-      const audio = audioRef.current;
-      if (audio) {
-        audio.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
-      }
-    }, 100);
   };
 
   const toggleShuffle = () => setIsShuffled(!isShuffled);
