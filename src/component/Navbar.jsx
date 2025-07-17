@@ -4,8 +4,6 @@ import '../styles/Navbar.css';
 import '../styles/search.css';
 
 // ICONS
-import HomeIcon from '../assets/icons/home.svg';
-import LibraryIcon from '../assets/icons/library.svg';
 import SearchIcon from '../assets/icons/search.svg';
 import HamIcon from '../assets/icons/ham_menu.svg';
 import CloseIcon from '../assets/icons/cancel.svg';
@@ -115,10 +113,7 @@ function Navbar() {
   return (
     <nav className='navbar'>
       <Link to="/" className='aa' data-text="Home">
-        <img src={HomeIcon} alt="Home" className='svg' />
-      </Link>
-      <Link to="/library" className='aa' data-text="Library">
-        <img src={LibraryIcon} alt="Library" className='svg' />
+         <h1 className='titleIcon'>Mofy</h1>
       </Link>
 
       <form onSubmit={handleSubmit} className="searchbar">
@@ -157,9 +152,9 @@ function Navbar() {
           <a href="#"><img src={Profile} alt="" className='dd' />Profil</a>
           <a href="#"><img src={Settings} alt="" className='dd' />Pengaturan</a>
           <Link to="/request"><img src={Request} alt="" className='dd' />Add Music</Link>
-          <button onClick={handleLogout} className="logout-btn">
+          <Link onClick={handleLogout} className="logout-btn">
             <img src={Login} alt="Logout" className="dd" />Logout
-          </button>
+          </Link>
         </div>
       )}
     </nav>

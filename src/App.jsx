@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import '../src/styles/App.css';
 
 import Navbar from './component/Navbar';
 import MusicSection from './pages/MusicSection';
@@ -15,6 +16,9 @@ import AdminDashboard from './pages/admin/Dashboard';
 import UploadSong from './pages/admin/UploadSong';
 import UserDashboard from './pages/UserDashboard';
 
+// ✅ Import PlayerContext
+import { PlayerContext } from './context/PlayerContext';
+
 function App() {
   const location = useLocation();
   const [showCardPlayer, setShowCardPlayer] = useState(false);
@@ -23,6 +27,9 @@ function App() {
   const handleCloseCardPlayer = () => setShowCardPlayer(false);
 
   const hideLayout = ['/login', '/register'];
+
+  // ✅ Ambil currentSong dari context
+  const { currentSong } = useContext(PlayerContext);
 
   return (
     <>
@@ -34,9 +41,9 @@ function App() {
           element={
             <PrivateRoute>
               <>
-                <MusicSection title="New Songs" category="new" />
-                <MusicSection title="Lagu Indonesia" category="indo" />
-                <MusicSection title="Lagu Luar Negeri" category="luar" />
+                <MusicSection className="mst" title="New Songs" category="new" />
+                <MusicSection className="mst" title="Lagu Indonesia" category="indo" />
+                <MusicSection className="mst" title="Lagu Luar Negeri" category="luar" />
                 <FooterInfo />
               </>
             </PrivateRoute>
@@ -87,9 +94,12 @@ function App() {
       </Routes>
 
       {showCardPlayer && <CardPlayer onClose={handleCloseCardPlayer} />}
+
+      {/* ✅ FooterPlay muncul hanya kalau ada lagu & bukan halaman login/register/request */}
       {!showCardPlayer &&
         !hideLayout.includes(location.pathname) &&
-        location.pathname !== '/request' && (
+        location.pathname !== '/request' &&
+        currentSong && (
           <FooterPlay onOpenCardPlayer={handleOpenCardPlayer} />
         )}
     </>

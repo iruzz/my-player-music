@@ -1,44 +1,53 @@
+@import url('https://fonts.cdnfonts.com/css/bakso-sapi');
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
-  height: 60px;
-  padding: 0 20px;
+  z-index: 999;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #3D3D3D;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  gap: 12px;
 }
 
 .aa {
-  margin-right: 10px;
+  text-decoration: none;
+  color: white;
 }
 
-.svg {
-  width: 24px;
-  height: 24px;
-  filter: invert(1);
+.titleIcon {
+  font-weight: 700;
+  font-size: 25px;
+  font-family: 'Bakso Sapi', sans-serif;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+  color: white;
 }
 
-/* ✅ SEARCH BAR FIX */
 .searchbar {
   flex: 1;
-  max-width: 500px;
-  margin: 0 20px;
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   align-items: center;
   position: relative;
   background-color: #ffffff1a;
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: 20px;
+  overflow: hidden;
+  gap: 6px;
   box-shadow:
     inset 4px 4px 10px rgba(0, 0, 0, 0.6),
     inset -4px -4px 10px rgba(255, 255, 255, 0.05),
     0 2px 5px rgba(0, 0, 0, 0.9);
 }
+
 
 .searchbar input {
   background: transparent;
@@ -47,13 +56,37 @@
   flex: 1;
   outline: none;
   font-size: 14px;
+  min-width: 60px;
+  padding: 4px 0;
+}
+
+.searchbar input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
 }
 
 .searchbar img {
-  margin-left: 10px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
   cursor: pointer;
+}
+
+.ham {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ham .svg {
+  width: 26px;
+  height: 26px;
+  filter: invert(1);
+}
+
+.svg {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
 }
 
 /* 🔽 Dropdown hasil pencarian */
@@ -67,7 +100,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
   max-height: 300px;
   overflow-y: auto;
-  z-index: 99;
+  z-index: 9999;
 }
 
 .result-item {
@@ -88,17 +121,6 @@
   object-fit: cover;
   margin-right: 10px;
   border-radius: 5px;
-}
-
-/* ✅ HAMBURGER ICON */
-.ham {
-  margin-left: auto;
-  cursor: pointer;
-}
-
-.ham .svg {
-  width: 26px;
-  height: 26px;
 }
 
 /* DROPDOWN MENU */
@@ -137,9 +159,41 @@
   width: 18px;
   height: 18px;
   margin-right: 10px;
-  filter: invert(1);
+
 }
 
 .logout-btn {
   cursor: pointer;
+}
+
+/* ✅ Responsive tweaks */
+@media (max-width: 500px) {
+  .titleIcon {
+    font-size: 20px;
+  }
+
+  .searchbar {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .searchbar input {
+    font-size: 12px;
+    min-width: 80px;
+    padding: 2px 0;
+  }
+
+  .searchbar input::placeholder {
+    font-size: 12px;
+  }
+
+  .searchbar img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .ham .svg {
+    width: 22px;
+    height: 22px;
+  }
 }

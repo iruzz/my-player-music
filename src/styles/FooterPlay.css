@@ -3,24 +3,26 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 90px;
   background: #2d2d2d;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
-  box-shadow: 0 -3px 10px rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.6);
   z-index: 9999;
   color: white;
+  gap: 10px;
+  height: 90px;
 }
 
-/* Kiri: Info Lagu */
+/* KIRI: Info Lagu */
 .track-info {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   overflow: hidden;
   min-width: 0;
+  flex: 1;
 }
 
 .track-thumbnail {
@@ -29,6 +31,7 @@
   background-color: #555;
   border-radius: 10px;
   flex-shrink: 0;
+  object-fit: cover;
 }
 
 .track-details {
@@ -37,25 +40,25 @@
   overflow: hidden;
 }
 
-.track-title {
-  font-size: 16px;
-  font-weight: bold;
+.track-title,
+.track-artist {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 250px;
+  max-width: 220px;
+}
+
+.track-title {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .track-artist {
   font-size: 14px;
   color: #ccc;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 250px;
 }
 
-/* Tengah: Ikon */
+/* TENGAH: Player Controls */
 .player-controls {
   position: absolute;
   left: 50%;
@@ -63,6 +66,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  z-index: 1;
 }
 
 .control-btn {
@@ -71,14 +75,24 @@
   cursor: pointer;
   width: 28px;
   height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Kanan: Progress bar */
+.control-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+/* KANAN: Progress */
 .track-progress {
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 200px;
+  gap: 8px;
+  width: 220px;
+  justify-content: flex-end;
+  font-size: 12px;
 }
 
 .progress-bar {
@@ -99,4 +113,71 @@
 
 .progress-bar:hover {
   background: #666;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-player {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .track-info,
+  .track-progress {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .track-details .track-title,
+  .track-details .track-artist {
+    max-width: 100%;
+  }
+
+  .player-controls {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 4px;
+    order: 2;
+  }
+
+  .track-progress {
+    justify-content: center;
+  }
+
+  .progress-bar {
+    max-width: 100%;
+    height: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .track-thumbnail {
+    width: 48px;
+    height: 48px;
+  }
+
+  .track-title {
+    font-size: 14px;
+  }
+
+  .track-artist {
+    font-size: 12px;
+  }
+
+  .control-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .track-progress {
+    font-size: 11px;
+  }
+
+  .progress-bar {
+    height: 3px;
+  }
 }

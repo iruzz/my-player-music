@@ -68,7 +68,8 @@ function MusicSection({ title = "New Songs", category = "new" }) {
   return (
     <section className="music-section">
       <div className="section-header">
-        <h2>{title}</h2>
+      <h2 className="section-title bakso-title">{title}</h2>
+
       </div>
 
       <div className="carousel-wrapper">
