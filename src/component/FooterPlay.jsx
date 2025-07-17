@@ -39,7 +39,6 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
     };
 
     playAudio();
-
     setCurrentTime(0);
     setDuration(0);
   }, [currentSong]);
@@ -60,15 +59,8 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
       if (repeatMode === 'one') {
         audio.currentTime = 0;
         audio.play();
-      } else if (repeatMode === 'all' || true) {
-        handleNext();
       } else {
-        const currentIndex = songs.findIndex(song => song.id === currentSong?.id);
-        if (currentIndex + 1 < songs.length) {
-          setCurrentSong(songs[currentIndex + 1]);
-        } else {
-          setIsPlaying(false); // end of list
-        }
+        handleNext();
       }
     };
 
@@ -82,6 +74,30 @@ function FooterPlay({ setShowCard, setCurrentCardSong }) {
       audio.removeEventListener('ended', handleEnded);
     };
   }, [isDragging, repeatMode, currentSong, songs]);
+
+  // 🎹 Keyboard control: Space = toggle play, Left = previous, Right = next
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const tag = document.activeElement.tagName;
+      const isFormInput = tag === 'INPUT' || tag === 'TEXTAREA';
+
+      if (isFormInput) return;
+
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.code === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      } else if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrevious();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isPlaying, currentSong, songs]);
 
   const formatTime = (time) => {
     if (isNaN(time)) return '0:00';
