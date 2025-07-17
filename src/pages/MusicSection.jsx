@@ -33,7 +33,6 @@ function MusicSection({ title = "New Songs", category = "new" }) {
           audio: baseUrl + song.audio_path,
         }));
 
-        // filter berdasarkan kategori
         const filtered = updatedSongs.filter(song => {
           switch (category) {
             case 'new':
@@ -48,7 +47,7 @@ function MusicSection({ title = "New Songs", category = "new" }) {
         });
 
         setSongsData(filtered);
-        setSongs(prev => [...prev, ...filtered]); // gabung semua lagu
+        setSongs(prev => [...prev, ...filtered]);
       })
       .catch(err => console.error('Gagal ambil data:', err));
   }, [category, setSongs]);
@@ -56,6 +55,12 @@ function MusicSection({ title = "New Songs", category = "new" }) {
   const handlePlay = (song) => {
     setCurrentSong(song);
     setIsPlaying(true);
+
+    // Scroll ke elemen lagu sesuai ID
+    const target = document.getElementById(`song-${song.id}`);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+    }
   };
 
   const scrollCarousel = (direction) => {
@@ -68,8 +73,7 @@ function MusicSection({ title = "New Songs", category = "new" }) {
   return (
     <section className="music-section">
       <div className="section-header">
-      <h2 className="section-title bakso-title">{title}</h2>
-
+        <h2 className="section-title bakso-title">{title}</h2>
       </div>
 
       <div className="carousel-wrapper">
@@ -78,7 +82,11 @@ function MusicSection({ title = "New Songs", category = "new" }) {
         <div className="music-carousel" ref={carouselRef}>
           {songsData.length > 0 ? (
             songsData.map((song, index) => (
-              <div className="music-card" key={index}>
+              <div
+                className="music-card"
+                key={index}
+                id={`song-${song.id}`} // ⬅️ Tambahkan ID untuk scroll
+              >
                 <div className="album-container">
                   <img src={song.img} alt={song.title} className="album-img" />
                   <button

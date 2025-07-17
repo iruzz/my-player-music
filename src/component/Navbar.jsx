@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 import '../styles/search.css';
@@ -12,6 +12,8 @@ import Settings from '../assets/icons/settings.svg';
 import Login from '../assets/icons/login.svg';
 import Request from '../assets/icons/request.svg';
 
+import { PlayerContext } from '../context/PlayerContext';
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -23,11 +25,12 @@ function Navbar() {
   const hamRef = useRef(null);
   const navigate = useNavigate();
 
+  const { setCurrentSong, setIsPlaying } = useContext(PlayerContext);
+
   const toggleMenu = () => {
     setMenuOpen(prev => !prev);
   };
 
-  // Tutup dropdown menu kalau klik di luar elemen
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -43,9 +46,9 @@ function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ✅ FETCH LAGU DENGAN TOKEN
+  // ✅ Ambil data lagu
   useEffect(() => {
-    const token = localStorage.getItem('token'); // Ambil token dari localStorage
+    const token = localStorage.getItem('token');
 
     fetch('http://127.0.0.1:8000/api/songs', {
       headers: {
@@ -60,13 +63,12 @@ function Navbar() {
         return response.json();
       })
       .then((response) => {
-        console.log('✅ Data lagu:', response);
-
         const songs = response.data || [];
         const baseUrl = 'http://127.0.0.1:8000/storage/';
         const formatted = songs.map(song => ({
           ...song,
           img: baseUrl + song.cover_path,
+          audio: baseUrl + song.audio_path,
           title: song.title,
         }));
         setAllSongs(formatted);
@@ -74,7 +76,7 @@ function Navbar() {
       .catch(err => console.error('Gagal ambil lagu:', err));
   }, []);
 
-  // 🔍 Search logic
+  // 🔍 Filter pencarian
   useEffect(() => {
     if (query.trim() === '') {
       setFiltered([]);
@@ -89,13 +91,22 @@ function Navbar() {
     setShowDropdown(true);
   }, [query, allSongs]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (query.trim()) {
-      navigate(`/search?q=${encodeURIComponent(query.trim())}`);
-      setQuery('');
-      setShowDropdown(false);
+  // ✅ Klik hasil search = scroll + set lagu
+  const handleClickResult = (judul) => {
+    const target = allSongs.find(song => song.title === judul);
+    if (target) {
+      const el = document.getElementById(`song-${target.id}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // Optional: auto play lagu
+      setCurrentSong(target);
+      setIsPlaying(true);
     }
+
+    setQuery('');
+    setShowDropdown(false);
   };
 
   const handleLogout = () => {
@@ -104,19 +115,13 @@ function Navbar() {
     navigate('/login');
   };
 
-  const handleClickResult = (judul) => {
-    navigate(`/search?q=${encodeURIComponent(judul)}`);
-    setQuery('');
-    setShowDropdown(false);
-  };
-
   return (
     <nav className='navbar'>
       <Link to="/" className='aa' data-text="Home">
          <h1 className='titleIcon'>Mofy</h1>
       </Link>
 
-      <form onSubmit={handleSubmit} className="searchbar">
+      <form onSubmit={(e) => e.preventDefault()} className="searchbar">
         <div className="searchkolom">
           <input
             type="text"
