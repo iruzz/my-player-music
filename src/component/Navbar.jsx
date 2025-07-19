@@ -154,8 +154,6 @@ function Navbar() {
 
       {menuOpen && (
         <div className="dropdown-menu" id="dropdownMenu" ref={menuRef}>
-          <a href="#"><img src={Profile} alt="" className='dd' />Profil</a>
-          <a href="#"><img src={Settings} alt="" className='dd' />Pengaturan</a>
           <Link to="/request"><img src={Request} alt="" className='dd' />Add Music</Link>
           <Link onClick={handleLogout} className="logout-btn">
             <img src={Login} alt="Logout" className="dd" />Logout
