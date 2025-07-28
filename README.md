@@ -23,9 +23,9 @@
 - GitHub: [@iruzz](https://github.com/iruzz)
 - Email: rabbaniruzz45@example.com
 
-**namaAuthor2**
+**abbyansyah**
 
-- GitHub: [@abby](https://github.com/DFNero)
+- GitHub: [@DFNero](https://github.com/DFNero)
 - Email: -
 
 
