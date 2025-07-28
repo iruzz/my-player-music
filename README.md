@@ -1,12 +1,25 @@
-# React + Vite
+<h1 align="center">🎧 My Player Music - MOFY 🎶</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://github.com/iruzz/my-player-music/assets/your_screenshot_here" width="800"/>
+</p>
 
-Currently, two official plugins are available:
+## 🌟 Fitur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎵 Putar lagu dari berbagai kategori
+- 🔍 Cari lagu favorit
+- 🌓 Tema gelap estetik
+- 🎨 UI smooth dan interaktif
+- ⚡ Keyboard shortcut (play/pause/next)
 
-## Expanding the ESLint configuration
+## 🖼️ Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Preview](yes.png) <!-- Ganti sesuai path kalau upload langsung -->
+
+## 🚀 Cara Menjalankan
+
+```bash
+git clone https://github.com/iruzz/my-player-music.git
+cd my-player-music
+npm install
+npm run dev
