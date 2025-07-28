@@ -23,3 +23,20 @@ git clone https://github.com/iruzz/my-player-music.git
 cd my-player-music
 npm install
 npm run dev
+
+## ✨ Authors
+
+<p align="left">
+  <a href="https://github.com/iruzz" target="_blank">
+    <img src="https://avatars.githubusercontent.com/u/58226740?v=4" width="100" style="border-radius:50%"/>
+    <br />
+    <sub><b>iruzz</b></sub>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/namaAuthor2" target="_blank">
+    <img src="https://avatars.githubusercontent.com/u/12345678?v=4" width="100" style="border-radius:50%"/>
+    <br />
+    <sub><b>namaAuthor2</b></sub>
+  </a>
+</p>
+
