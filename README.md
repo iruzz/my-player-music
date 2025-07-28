@@ -16,14 +16,6 @@
 
 ![Preview](yes.png) <!-- Ganti sesuai path kalau upload langsung -->
 
-## 🚀 Cara Menjalankan
-
-```bash
-git clone https://github.com/iruzz/my-player-music.git
-cd my-player-music
-npm install
-npm run dev
-
 ## ✨ Authors
 
 <p align="left">
@@ -39,4 +31,14 @@ npm run dev
     <sub><b>namaAuthor2</b></sub>
   </a>
 </p>
+
+
+## 🚀 Cara Menjalankan
+
+```bash
+git clone https://github.com/iruzz/my-player-music.git
+cd my-player-music
+npm install
+npm run dev
+
 
