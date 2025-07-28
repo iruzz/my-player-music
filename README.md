@@ -1,7 +1,7 @@
 <h1 align="center">🎧 My Player Music - MOFY 🎶</h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/iruzz/my-player-music/main/public/image/mofy_favicon.jpeg" width="70"/>
+  <img src="https://raw.githubusercontent.com/iruzz/my-player-music/main/public/image/mofy_favicon.jpeg" width="120"/>
 </p>
 
 ## 🌟 Fitur
