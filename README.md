@@ -16,21 +16,17 @@
 
 ![Preview](yes.png) <!-- Ganti sesuai path kalau upload langsung -->
 
-## ✨ Authors
+## 👨‍💻 Authors
 
-<p align="left">
-  <a href="https://github.com/iruzz" target="_blank">
-    <img src="https://avatars.githubusercontent.com/u/58226740?v=4" width="100" style="border-radius:50%"/>
-    <br />
-    <sub><b>iruzz</b></sub>
-  </a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/namaAuthor2" target="_blank">
-    <img src="https://avatars.githubusercontent.com/u/12345678?v=4" width="100" style="border-radius:50%"/>
-    <br />
-    <sub><b>namaAuthor2</b></sub>
-  </a>
-</p>
+**iruzz**
+
+- GitHub: [@iruzz](https://github.com/iruzz)
+- Email: rabbaniruzz45@example.com
+
+**namaAuthor2**
+
+- GitHub: [@abby](https://github.com/DFNero)
+- Email: -
 
 
 ## 🚀 Cara Menjalankan
