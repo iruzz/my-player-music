@@ -22,11 +22,13 @@
 
 - GitHub: [@iruzz](https://github.com/iruzz)
 - Email: rabbaniruzz45@example.com
+- As: Backend and Hosting 
 
 **abbyansyah**
 
 - GitHub: [@DFNero](https://github.com/DFNero)
-- Email: -
+- Email: abbyansyahathaw@gmail.com
+- As: Frontend and Design UI/UX
 
 
 ## 🚀 Cara Menjalankan
